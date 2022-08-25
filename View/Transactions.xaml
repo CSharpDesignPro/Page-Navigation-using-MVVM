@@ -1,0 +1,46 @@
+﻿<UserControl x:Class="Page_Navigation_App.View.Transactions"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:vm="clr-namespace:Page_Navigation_App.ViewModel"
+             mc:Ignorable="d"
+             d:DesignHeight="600"
+             d:DesignWidth="622"
+             Style="{StaticResource Page_Style}">
+
+    <UserControl.DataContext>
+        <vm:TransactionVM />
+    </UserControl.DataContext>
+    
+    <Grid Margin="15">
+
+        <Border CornerRadius="0,20,20,0">
+            <Border.Background>
+                <ImageBrush ImageSource="/Images/transaction_page.png"
+                            Stretch="None" />
+            </Border.Background>
+        </Border>
+
+        <Grid>
+
+            <TextBlock Text="Payment Amount  :"
+                       Foreground="#DBDBDB"
+                       FontSize="12"
+                       HorizontalAlignment="Right"
+                       VerticalAlignment="Top"
+                       FontFamily="/Fonts/#Rubik Medium"
+                       Margin="0,300,150,0" />
+
+            <TextBlock Text="{Binding TransactionAmount, StringFormat='{}{0:C}'}"
+                       Foreground="#CED565"
+                       FontSize="12"
+                       HorizontalAlignment="Right"
+                       VerticalAlignment="Top"
+                       FontFamily="/Fonts/#Rubik Medium"
+                       Margin="0,300,82,0" />
+
+        </Grid>
+
+    </Grid>
+</UserControl>
